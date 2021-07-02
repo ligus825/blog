@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://github.com/ligusx/blog</id>
+    <id>https://blog.ligus.tk</id>
     <title>Gridea</title>
-    <updated>2021-07-02T02:03:27.132Z</updated>
+    <updated>2021-07-02T02:06:40.130Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://github.com/ligusx/blog"/>
-    <link rel="self" href="https://github.com/ligusx/blog/atom.xml"/>
+    <link rel="alternate" href="https://blog.ligus.tk"/>
+    <link rel="self" href="https://blog.ligus.tk/atom.xml"/>
     <subtitle>温故而知新</subtitle>
-    <logo>https://github.com/ligusx/blog/images/avatar.png</logo>
-    <icon>https://github.com/ligusx/blog/favicon.ico</icon>
+    <logo>https://blog.ligus.tk/images/avatar.png</logo>
+    <icon>https://blog.ligus.tk/favicon.ico</icon>
     <rights>All rights reserved 2021, Gridea</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://github.com/ligusx/blog/post/hello-gridea/</id>
-        <link href="https://github.com/ligusx/blog/post/hello-gridea/">
+        <id>https://blog.ligus.tk/post/hello-gridea/</id>
+        <link href="https://blog.ligus.tk/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
