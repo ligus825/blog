@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://ligusx.github.io</id>
+    <id>https://blog.ligus.tk</id>
     <title>ligus blog</title>
-    <updated>2021-07-03T04:32:49.480Z</updated>
+    <updated>2021-07-03T04:34:36.710Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://ligusx.github.io"/>
-    <link rel="self" href="https://ligusx.github.io/atom.xml"/>
+    <link rel="alternate" href="https://blog.ligus.tk"/>
+    <link rel="self" href="https://blog.ligus.tk/atom.xml"/>
     <subtitle>记录学习心得，心情，生活</subtitle>
-    <logo>https://ligusx.github.io/images/avatar.png</logo>
-    <icon>https://ligusx.github.io/favicon.ico</icon>
+    <logo>https://blog.ligus.tk/images/avatar.png</logo>
+    <icon>https://blog.ligus.tk/favicon.ico</icon>
     <rights>All rights reserved 2021, ligus blog</rights>
     <entry>
         <title type="html"><![CDATA[你好，世界]]></title>
-        <id>https://ligusx.github.io/post/ni-hao-shi-jie/</id>
-        <link href="https://ligusx.github.io/post/ni-hao-shi-jie/">
+        <id>https://blog.ligus.tk/post/ni-hao-shi-jie/</id>
+        <link href="https://blog.ligus.tk/post/ni-hao-shi-jie/">
         </link>
         <updated>2021-07-02T08:34:03.000Z</updated>
         <content type="html"><![CDATA[<p>欢迎━(<em>｀∀´</em>)ノ亻!第一次到来的小可爱</p>
