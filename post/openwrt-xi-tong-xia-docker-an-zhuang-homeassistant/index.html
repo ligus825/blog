@@ -6,7 +6,7 @@
 
 <title>openwrt系统下Docker安装homeassistant。 | ligus blog</title>
 
-<link rel="shortcut icon" href="https://blog.ligus.tk/favicon.ico?v=1629427612028">
+<link rel="shortcut icon" href="https://blog.ligus.tk/favicon.ico?v=1629427839079">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.ligus.tk/styles/main.css">
@@ -77,7 +77,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1629427612028" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1629427839079" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -104,7 +104,7 @@
                 <div class="post-content">
                     <p>其实非常简单，就一行命令就行<br>
 <code>docker run --init -d --name=HASS -v /opt/docker/hass:/config -v /etc/localtime:/etc/localtime:ro -p 8123:8123 homeassistant/home-assistant</code><br>
-/opt/docker/hass这是我HA的安装和配置文件路径<br>
+/opt/docker/hass这是我HASS的配置文件路径<br>
 HASS是容器名称<br>
 p 8123:8123是端口<br>
 另外重启策略修改为Always<br>
