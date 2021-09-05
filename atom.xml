@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ligus.tk</id>
     <title>ligus blog</title>
-    <updated>2021-09-05T08:32:48.132Z</updated>
+    <updated>2021-09-05T08:46:23.551Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ligus.tk"/>
     <link rel="self" href="https://blog.ligus.tk/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://blog.ligus.tk/images/avatar.png</logo>
     <icon>https://blog.ligus.tk/favicon.ico</icon>
     <rights>All rights reserved 2021, ligus blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Freenom域名自动续期]]></title>
+        <id>https://blog.ligus.tk/post/freenom-yu-ming-zi-dong-xu-qi/</id>
+        <link href="https://blog.ligus.tk/post/freenom-yu-ming-zi-dong-xu-qi/">
+        </link>
+        <updated>2021-09-05T08:34:47.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[邪恶力量完结了，爷青结]]></title>
         <id>https://blog.ligus.tk/post/xie-e-li-liang-wan-jie-liao-ye-qing-jie/</id>
