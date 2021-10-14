@@ -1,0 +1,901 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>openwrt-mini操作指南 | ligus blog</title>
+
+<link rel="shortcut icon" href="https://blog.ligus.top/favicon.ico?v=1634179586580">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://blog.ligus.top/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            ligus blog
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="https://blog.ligus.top" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://blog.ligus.top/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://blog.ligus.top/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="https://blog.ligus.top/post/guan-yu" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1634179586580" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    openwrt-mini操作指南
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-10-14 ·
+                    </time>
+                    
+                </div>
+                <div class="post-content">
+                    <h2 id="更新软件列表">更新软件列表</h2>
+<p>opkg update</p>
+<h2 id="安装指定软件">安装指定软件</h2>
+<p>opkg install luci-app-smartdns</p>
+<h2 id="搜索中文语言包">搜索中文语言包</h2>
+<p>opkg list | grep luci-app-ssr-plus | grep zh-cn</p>
+<h2 id="安装中文语言包">安装中文语言包</h2>
+<p>opkg install luci-i18n-luci-app-smartdns</p>
+<h2 id="软件列表">软件列表</h2>
+<h1 id="luci-app-安装说明">LuCI APP 安装说明</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">LuCI APP</th>
+<th style="text-align:left">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">luci-app-accesscontrol</td>
+<td style="text-align:left">上网时间控制</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-acme</td>
+<td style="text-align:left">Acme.sh HTTP 证书申请</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-adblock</td>
+<td style="text-align:left">ADBlock 广告屏蔽工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-adbyby-plus</td>
+<td style="text-align:left">ADBYBY 广告屏蔽大师</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-adguardhome</td>
+<td style="text-align:left">ADGuardHome 广告屏蔽工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-advanced-reboot</td>
+<td style="text-align:left">高级重启</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-advancedsetting</td>
+<td style="text-align:left">系统高级设置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ahcp</td>
+<td style="text-align:left">AHCP 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-airplay2</td>
+<td style="text-align:left">AirPlay2 音频推送服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-airwhu</td>
+<td style="text-align:left">锐捷 802.1X 认证客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-aliddns</td>
+<td style="text-align:left">阿里云 DDNS</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-amule</td>
+<td style="text-align:left">aMule P2P 下载工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-appfilter</td>
+<td style="text-align:left">应用过滤</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-argon-config</td>
+<td style="text-align:left">Argon 主题配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-aria2</td>
+<td style="text-align:left">Aria2 下载工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-arpbind</td>
+<td style="text-align:left">IP/Mac 绑定</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-attendedsysupgrade</td>
+<td style="text-align:left">参与式系统升级</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-autoipsetadder</td>
+<td style="text-align:left">IPSET 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-autoreboot</td>
+<td style="text-align:left">定时重启</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-baidupcs-web</td>
+<td style="text-align:left">百度网盘 Pcs 下载</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-beardropper</td>
+<td style="text-align:left">SSH 攻击防御</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-bird1-ipv6</td>
+<td style="text-align:left">BIRD 路由守护程序 (IPV6)</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-bmx6</td>
+<td style="text-align:left">BMX6 路由协议</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-brook</td>
+<td style="text-align:left">Brook 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-brook-server</td>
+<td style="text-align:left">Brook 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cd8021x</td>
+<td style="text-align:left">802.1x 有线认证拨号</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-chinadns</td>
+<td style="text-align:left">ChinaDNS</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cifs</td>
+<td style="text-align:left">CIFS 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cifs-mount</td>
+<td style="text-align:left">SMB/CIFS 挂载客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cjdns</td>
+<td style="text-align:left">IPV6 加密</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-clamav</td>
+<td style="text-align:left">联系人</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-commands</td>
+<td style="text-align:left">自定义命令</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cpufreq</td>
+<td style="text-align:left">CPU 性能优化调节</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cpulimit</td>
+<td style="text-align:left">CPU 使用率限制</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cshark</td>
+<td style="text-align:left">CloudShark 抓包工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-cupsd</td>
+<td style="text-align:left">Cups 打印服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-dawn</td>
+<td style="text-align:left">分散式 WiFi 控制器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ddns</td>
+<td style="text-align:left">DDNS 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-diag-core</td>
+<td style="text-align:left">网络诊断</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-diskman</td>
+<td style="text-align:left">磁盘管理</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-dnscrypt-proxy</td>
+<td style="text-align:left">DNSCrypt-Proxy</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-dnsforwarder</td>
+<td style="text-align:left">DNSForwarder</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-docker</td>
+<td style="text-align:left">Docker 容器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-dockerman</td>
+<td style="text-align:left">Docker 控制面板</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-e2guardian</td>
+<td style="text-align:left">Web 内容过滤器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-eqos</td>
+<td style="text-align:left">客户端限速 (基于 IP)</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-familycloud</td>
+<td style="text-align:left">天翼家庭云 / 云盘提速</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-fileassistant</td>
+<td style="text-align:left">文件助手</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-filebrowser</td>
+<td style="text-align:left">FileBrowser文件管理器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-filetransfer</td>
+<td style="text-align:left">文件传输</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-firewall</td>
+<td style="text-align:left">防火墙</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-freifunk-policyrouting</td>
+<td style="text-align:left">Freifunk 策略路由</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-freifunk-widgets</td>
+<td style="text-align:left">Freifunk 组件</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-frpc</td>
+<td style="text-align:left">Frp 内网穿透客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-frps</td>
+<td style="text-align:left">Frp 内网穿透服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-gost</td>
+<td style="text-align:left">Gost 安全隧道</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-gowebdav</td>
+<td style="text-align:left">GoWebDav</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-guest-wifi</td>
+<td style="text-align:left">访客 WiFi</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-haproxy-tcp</td>
+<td style="text-align:left">Haproxy 负载均衡</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-hd-idle</td>
+<td style="text-align:left">硬盘休眠</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-hnet</td>
+<td style="text-align:left">Homenet 控制协议</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-https-dns-proxy</td>
+<td style="text-align:left">DOH 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-https_dns_proxy</td>
+<td style="text-align:left">DOH 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ipsec-vpnd</td>
+<td style="text-align:left">IPSec VPN 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ipsec-vpnserver-manyusers</td>
+<td style="text-align:left">IPSec VPN 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-iptvhelper</td>
+<td style="text-align:left">IPTV 助手</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-jd-dailybonus</td>
+<td style="text-align:left">京东签到助手</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-kcptun</td>
+<td style="text-align:left">Kcptun</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-kodexplorer</td>
+<td style="text-align:left">可道云文件管理器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ksmbd</td>
+<td style="text-align:left">KSMB 网络共享</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-lxc</td>
+<td style="text-align:left">LXC 容器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-mentohust</td>
+<td style="text-align:left">Mentohust 锐捷拨号客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-meshwizard</td>
+<td style="text-align:left">Mesh 设置向导</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-minidlna</td>
+<td style="text-align:left">MiniDLNA</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-minieap</td>
+<td style="text-align:left">Minieap 锐捷拨号客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-mjpg-streamer</td>
+<td style="text-align:left">UVC 摄像头配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-music-remote-center</td>
+<td style="text-align:left">PCHiFi 数字转盘遥控</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-mwan3</td>
+<td style="text-align:left">Mwan3 多线多拨</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-mwan3helper</td>
+<td style="text-align:left">Mwan3 助手</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-mwol</td>
+<td style="text-align:left">网络唤醒 (MQTT 协议)</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-n2n_v2</td>
+<td style="text-align:left">N2N V2 VPN</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-naiveproxy</td>
+<td style="text-align:left">Naiveproxy 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-netdata</td>
+<td style="text-align:left">Netdata 实时监控</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-nfs</td>
+<td style="text-align:left">NFS 管理</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-nft-qos</td>
+<td style="text-align:left">Nftables 限速</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-nginx-pingos</td>
+<td style="text-align:left">PingOS 流媒体服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ngrokc</td>
+<td style="text-align:left">Ngrok 内网穿透客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-njitclient</td>
+<td style="text-align:left">南京工程学院 802.1X 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-nlbwmon</td>
+<td style="text-align:left">流量监控</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-nps</td>
+<td style="text-align:left">NPS 内网穿透</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ntpc</td>
+<td style="text-align:left">NTP 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-oled</td>
+<td style="text-align:left">OLED 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-onliner</td>
+<td style="text-align:left">在线客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-openclash</td>
+<td style="text-align:left">OpenClash</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-openvpn</td>
+<td style="text-align:left">OpenVPN 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-openvpn-server</td>
+<td style="text-align:left">OpenVPN 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-p910nd</td>
+<td style="text-align:left">P910nd 打印服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-pagekitec</td>
+<td style="text-align:left">PageKite 内网穿透客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-passwall</td>
+<td style="text-align:left">Passwall</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-polipo</td>
+<td style="text-align:left">Polipo 代理服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-pppoe-relay</td>
+<td style="text-align:left">PPPoE NAT 穿透</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-pppoe-server</td>
+<td style="text-align:left">PPPoE 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-privoxy</td>
+<td style="text-align:left">Privoxy 代理服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ps3netsrv</td>
+<td style="text-align:left">Ps3netsrv</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-qbittorrent</td>
+<td style="text-align:left">qBittorrent</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-qos</td>
+<td style="text-align:left">QoS 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-qosv4</td>
+<td style="text-align:left">QoS V4</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-radicale</td>
+<td style="text-align:left">CalDAV/CardDAV 同步工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ramfree</td>
+<td style="text-align:left">释放内存</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-rclone</td>
+<td style="text-align:left">Rclone</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-rp-pppoe-server</td>
+<td style="text-align:left">RP-PPPoE 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-samba</td>
+<td style="text-align:left">Samba 网络共享</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-samba4</td>
+<td style="text-align:left">Samba4 网络共享</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-scutclient</td>
+<td style="text-align:left">华南理工大学拨号客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-serverchan</td>
+<td style="text-align:left">Server 酱</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-shadowsocks-libev</td>
+<td style="text-align:left">Shadowsocks 客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-shairplay</td>
+<td style="text-align:left">Shairplay 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-simple-adblock</td>
+<td style="text-align:left">Simple ADBlock 广告屏蔽</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-smartdns</td>
+<td style="text-align:left">SmartDNS</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-smartinfo</td>
+<td style="text-align:left">S.M.A.R.T 硬盘监控</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-smstool</td>
+<td style="text-align:left">3G 模块短信工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-socat</td>
+<td style="text-align:left">Socat 网络军刀</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-softethervpn</td>
+<td style="text-align:left">SoftEtherVPN</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-softethervpn5</td>
+<td style="text-align:left">SoftEtherVPN5</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-speederv2</td>
+<td style="text-align:left">UDPspeeder 工具</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-sqm</td>
+<td style="text-align:left">SQM QoS</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-squid</td>
+<td style="text-align:left">Squid 代理服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ssocks</td>
+<td style="text-align:left">sSocks 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ssr-libev-server</td>
+<td style="text-align:left">ShadowsocksR Libev 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ssr-mudb-server</td>
+<td style="text-align:left">ShadowsocksR 多用户服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ssr-plus</td>
+<td style="text-align:left">ShadowsocksR Plus +</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ssrserver-python</td>
+<td style="text-align:left">ShadowsocksR Python 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-statistics</td>
+<td style="text-align:left">实时流量监控</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-syncdial</td>
+<td style="text-align:left">负载均衡</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-syncthing</td>
+<td style="text-align:left">Syncthing</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-sysuh3c</td>
+<td style="text-align:left">中山大学东校区联网客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-terminal</td>
+<td style="text-align:left">WEB 终端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-timecontrol</td>
+<td style="text-align:left">时间控制</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-timewol</td>
+<td style="text-align:left">局域网唤醒</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-tinyproxy</td>
+<td style="text-align:left">TinyProxy</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-transmission</td>
+<td style="text-align:left">Transmission</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-travelmate</td>
+<td style="text-align:left">旅行路由器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-trojan-server</td>
+<td style="text-align:left">Trojan 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-ttyd</td>
+<td style="text-align:left">TTYD 终端</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-turboacc</td>
+<td style="text-align:left">Trubo ACC 网络加速</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-udp2raw</td>
+<td style="text-align:left">udp2raw 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-udpxy</td>
+<td style="text-align:left">udpxy 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-uhttpd</td>
+<td style="text-align:left">uhttpd 配置</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-unblockneteasemusic</td>
+<td style="text-align:left">解除网易云音乐播放限制</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-unblockneteasemusic-go</td>
+<td style="text-align:left">解除网易云音乐播放限制 (Golang)</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-unblockneteasemusic-mini</td>
+<td style="text-align:left">解除网易云音乐播放限制 (云解锁)</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-unbound</td>
+<td style="text-align:left">Unbound DNS 服务</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-upnp</td>
+<td style="text-align:left">UPNP</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-usb-printer</td>
+<td style="text-align:left">USB 打印服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-usb3disable</td>
+<td style="text-align:left">USB3 禁用</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-uugamebooster</td>
+<td style="text-align:left">网易 UU 加速器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-v2ray-server</td>
+<td style="text-align:left">V2RAY 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-verysync</td>
+<td style="text-align:left">微力同步</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-vlmcsd</td>
+<td style="text-align:left">KMS 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-vnstat</td>
+<td style="text-align:left">VNStat 流量监控</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-vpn-policy-routing</td>
+<td style="text-align:left">VPN 策略路由</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-vpnbypass</td>
+<td style="text-align:left">VPN 绕过</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-vsftpd</td>
+<td style="text-align:left">FTP 服务器</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-vssr</td>
+<td style="text-align:left">Hello World</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-watchcat</td>
+<td style="text-align:left">WatchCat</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-webadmin</td>
+<td style="text-align:left">Web 管理</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-webrestriction</td>
+<td style="text-align:left">访问限制</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-weburl</td>
+<td style="text-align:left">管控</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-wifischedule</td>
+<td style="text-align:left">WiFi 计划</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-wireguard</td>
+<td style="text-align:left">WireGuard 状态</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-wol</td>
+<td style="text-align:left">网络唤醒</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-wrtbwmon</td>
+<td style="text-align:left">实时流量监测</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-xlnetacc</td>
+<td style="text-align:left">迅雷快鸟</td>
+</tr>
+<tr>
+<td style="text-align:left">luci-app-zerotier</td>
+<td style="text-align:left">ZeroTier</td>
+</tr>
+</tbody>
+</table>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.ligus.top/post/wei-zhi-bi-ji-docker-da-jian/" class="post-title gt-a-link">
+                    为知笔记docker搭建
+                </a>
+            </div>
+        
+
+        
+            <span id="/post/openwrt-mini-cao-zuo-zhi-nan/" class="leancloud_visitors" data-flag-title="openwrt-mini操作指南">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'WbhW7gLiUcMGCEFrnamyIzvY-gzGzoHsz',
+		appKey: 'uSjp2EK3JPmv1IsUm9kdvjdL',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">记录学习心得，心情，生活</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://blog.ligus.top" target="_blank">ligus blog</a>
+    </div>
+    <div>
+        <a href="https://blog.ligus.top/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
