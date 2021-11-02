@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.ligus.top</id>
     <title>ligus blog</title>
-    <updated>2021-11-02T02:13:22.296Z</updated>
+    <updated>2021-11-02T04:00:37.301Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.ligus.top"/>
     <link rel="self" href="https://blog.ligus.top/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://blog.ligus.top/images/avatar.png</logo>
     <icon>https://blog.ligus.top/favicon.ico</icon>
     <rights>All rights reserved 2021, ligus blog</rights>
+    <entry>
+        <title type="html"><![CDATA[openwrt只读问题解决]]></title>
+        <id>https://blog.ligus.top/post/openwrt-zhi-du-wen-ti-jie-jue/</id>
+        <link href="https://blog.ligus.top/post/openwrt-zhi-du-wen-ti-jie-jue/">
+        </link>
+        <updated>2021-11-02T03:10:33.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[openwrt-mini操作指南]]></title>
         <id>https://blog.ligus.top/post/openwrt-mini-cao-zuo-zhi-nan/</id>
