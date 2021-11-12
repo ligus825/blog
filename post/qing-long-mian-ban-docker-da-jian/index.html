@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>海量节点获取 | ligus blog</title>
+<title>青龙面板docker搭建 | ligus blog</title>
 
 <link rel="shortcut icon" href="https://blog.ligus.top/favicon.ico?v=1636694245480">
 
@@ -89,41 +89,45 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    海量节点获取
+                    青龙面板docker搭建
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2021-07-31 ·
+                        · 2021-11-12 ·
                     </time>
                     
                 </div>
                 <div class="post-content">
-                    <p>谷歌搜索：inurl:clash/proxies<br>
-即可获得节点池地址<br>
-以下节点池是我自己收集的<br>
-https://233660.xyz/clash/proxies<br>
-https://fq.lonxin.net/clash/proxies<br>
-https://proxypool.fly.dev/clash/proxies<br>
-https://hello.stgod.com/clash/proxies<br>
-https://sspool.nl/clash/proxies<br>
-https://sspool.herokuapp.com/clash/proxies<br>
-https://ss.dswang.ga:8443/clash/proxies<br>
-http://zz.guicloud.xyz/clash/proxies<br>
-https://freeu.xyz/clash/proxies?type=all<br>
-https://proxypool.fly.dev/clash/proxies?filter=1<br>
-https://emby.luoml.eu.org/clash/proxies<br>
-https://freeu.xyz/clash/proxies<br>
-http://8.135.91.61/clash/proxies</p>
-<p>检测节点的软件：https://ck.ligus.top/zip/%E8%8A%82%E7%82%B9.zip</p>
+                    <p>docker run -dit <br>
+-v /opt/docker/ql/config:/ql/config <br>
+-v /opt/docker/ql/log:/ql/log <br>
+-v /opt/docker/ql/db:/ql/db <br>
+-v /opt/docker/ql/scripts:/ql/scripts <br>
+-v /opt/docker/ql/jbot:/ql/jbot <br>
+-v /opt/docker/ql/repo:/ql/repo <br>
+-p 5700:5700 <br>
+-e ENABLE_HANGUP=true <br>
+-e ENABLE_WEB_PANEL=true <br>
+--name qinglong <br>
+--hostname qinglong <br>
+--restart always <br>
+whyour/qinglong:latest</p>
 
                 </div>
             </article>
         </div>
 
         
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.ligus.top/post/openwrt-zhi-du-wen-ti-jie-jue/" class="post-title gt-a-link">
+                    openwrt只读问题解决
+                </a>
+            </div>
+        
 
         
-            <span id="/post/hai-liang-jie-dian-huo-qu/" class="leancloud_visitors" data-flag-title="海量节点获取">
+            <span id="/post/qing-long-mian-ban-docker-da-jian/" class="leancloud_visitors" data-flag-title="青龙面板docker搭建">
                 <em class="post-meta-item-text">阅读量 </em>
                 <i class="leancloud-visitors-count">0</i>
             </span>
