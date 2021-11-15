@@ -6,7 +6,7 @@
 
 <title>青龙面板docker搭建 | ligus blog</title>
 
-<link rel="shortcut icon" href="https://blog.ligus.top/favicon.ico?v=1636694245480">
+<link rel="shortcut icon" href="https://blog.ligus.top/favicon.ico?v=1636957565735">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.ligus.top/styles/main.css">
@@ -77,7 +77,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1636694245480" action="/search/index.html">
+            <form id="gridea-search-form" style="position: relative" data-update="1636957565735" action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
             </form>
@@ -98,20 +98,7 @@
                     
                 </div>
                 <div class="post-content">
-                    <p>docker run -dit <br>
--v /opt/docker/ql/config:/ql/config <br>
--v /opt/docker/ql/log:/ql/log <br>
--v /opt/docker/ql/db:/ql/db <br>
--v /opt/docker/ql/scripts:/ql/scripts <br>
--v /opt/docker/ql/jbot:/ql/jbot <br>
--v /opt/docker/ql/repo:/ql/repo <br>
--p 5700:5700 <br>
--e ENABLE_HANGUP=true <br>
--e ENABLE_WEB_PANEL=true <br>
---name qinglong <br>
---hostname qinglong <br>
---restart always <br>
-whyour/qinglong:latest</p>
+                    <p><code>docker run -dit \ -v /opt/docker/ql/config:/ql/config \ -v /opt/docker/ql/log:/ql/log \ -v /opt/docker/ql/db:/ql/db \ -v /opt/docker/ql/scripts:/ql/scripts \ -v /opt/docker/ql/jbot:/ql/jbot \ -v /opt/docker/ql/repo:/ql/repo \ -p 5700:5700 \ -e ENABLE_HANGUP=true \ -e ENABLE_WEB_PANEL=true \ --name qinglong \ --hostname qinglong \ --restart always \ whyour/qinglong:latest</code></p>
 
                 </div>
             </article>
