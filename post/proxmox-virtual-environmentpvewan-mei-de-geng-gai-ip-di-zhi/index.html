@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Gridea | ligus blog</title>
+<title>Proxmox Virtual Environment（PVE）完美的更改IP地址 | ligus blog</title>
 
 <link rel="shortcut icon" href="https://blog.ligus.tk/favicon.ico?v=1652260605634">
 
@@ -25,11 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,51 +85,77 @@
     </div>
 </nav>
 
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #Gridea
-            </h2>
-        </div>
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://blog.ligus.tk/post/hello-gridea/">
-                            <span class="post-title gt-c-content-color-first">Hello Gridea</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2018-12-12 ·
-                        </time>
-                        
-                            <a href="https://blog.ligus.tk/tag/2XhA91Lp8/" class="post-tag">
-                                # Gridea
-                            </a>
-                        
-                    </div>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Proxmox Virtual Environment（PVE）完美的更改IP地址
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2022-05-11 ·
+                    </time>
+                    
                 </div>
-                
-                    <a href="https://blog.ligus.tk/post/hello-gridea/" class="post-feature-image"
-                       style="background-image: url('https://blog.ligus.tk/post-images/hello-gridea.png')">
-                    </a>
-                
+                <div class="post-content">
+                    <p>vi /etc/network/interfaces</p>
+<p>通过键盘上下左右移动到address这行的IP地址，按一次i进入修改状态，修改为新的IP地址，如果需要网关则修改gateway这行，修改完成确认无误后按一次ESC键输入:wq!回车保存退出。</p>
+<p>vi /etc/issue</p>
+<p>通过键盘上下左右移动到https://这行的IP地址，按一次i进入修改状态，修改为新的IP地址，端口8006不要改，修改完成确认无误后按一次ESC键输入:wq!回车保存退出。</p>
+<p>vi /etc/hosts</p>
+<p>通过键盘上下左右移动到第2行的IP地址，按一次i进入修改状态，修改为新的IP地址，修改完成确认无误后按一次ESC键输入:wq!回车保存退出。</p>
+<p>重启PVE，完美解决！</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://blog.ligus.tk/post/ni-dong-de-yao-cai/" class="post-title gt-a-link">
+                    你懂得药材
+                </a>
             </div>
         
-    </div>
-</div>
-        <div class="pagination-container">
-    
-    
-</div>
+
+        
+            <span id="/post/proxmox-virtual-environmentpvewan-mei-de-geng-gai-ip-di-zhi/" class="leancloud_visitors" data-flag-title="Proxmox Virtual Environment（PVE）完美的更改IP地址">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: 'WbhW7gLiUcMGCEFrnamyIzvY-gzGzoHsz',
+		appKey: 'uSjp2EK3JPmv1IsUm9kdvjdL',
+		avatar: '',
+		pageSize: 5,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">记录学习心得，心情，生活</div>
